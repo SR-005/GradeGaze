@@ -9,5 +9,6 @@ dfmain=df.drop(["school","age","sex","address","famsize","Pstatus","Medu","Fedu"
 print(dfmain.info())
 
 sns.pairplot(dfmain, kind="hist",plot_kws={"alpha":0.5})
-#sns.scatterplot(data=df,x="studytime",y="G3")
 plt.show()
+#features  are traveltime,studeytime,failures,G1,G2
+#target variable is G3
