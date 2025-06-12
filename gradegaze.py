@@ -14,5 +14,6 @@ plt.show()
 #target variable is G3
 
 #MODEL TRAINING 
+#data setup
 features=["traveltime","studytime","failures","G1","G2"]
 target="G3"
