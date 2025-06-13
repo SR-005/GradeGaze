@@ -17,11 +17,27 @@ sns.pairplot(dfmain, kind="scatter",plot_kws={"alpha":0.5})
 #features  are traveltime,studeytime,failures,G1,G2
 #target variable is G3
 
+#setup new column for grades
+def markgrades(mark):
+    if mark>=16:
+        return "A"
+    elif mark>=14:
+        return "B"
+    elif mark>=12:
+        return "C"
+    elif mark>=10:
+        return "D"
+    else:
+        return "F"
+    
+df["grades"]=df["G3"].apply(markgrades)
+print(df.head(10))
 #MODEL TRAINING 
 #data setup
-
 X=df[["traveltime","studytime","failures","G1","G2"]]
 y=df["G3"]
+'''y_grade=df["grade"]'''
+
 
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
 #LINEAR REGRESSION
@@ -33,8 +49,8 @@ prediction=lm.predict(X_test)'''
 rfr=RandomForestRegressor(n_estimators=100,random_state=42)
 rfr.fit(X_train,y_train)
 prediction=rfr.predict(X_test)
-'''print(prediction)'''
 
+'''print(prediction)'''
 er1=mean_absolute_error(y_test,prediction)
 er2=mean_squared_error(y_test,prediction)
 er3=math.sqrt(er2)
