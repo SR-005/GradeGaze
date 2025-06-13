@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error,mean_squared_error
 import math
 
@@ -23,10 +24,15 @@ X=df[["traveltime","studytime","failures","G1","G2"]]
 y=df["G3"]
 
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
-lm=LinearRegression()
+#LINEAR REGRESSION
+'''lm=LinearRegression()
 lm.fit(X_train,y_train)
+prediction=lm.predict(X_test)'''
 
-prediction=lm.predict(X_test)
+#RandomForest Regression
+rfr=RandomForestRegressor(n_estimators=100,random_state=42)
+rfr.fit(X_train,y_train)
+prediction=rfr.predict(X_test)
 '''print(prediction)'''
 
 er1=mean_absolute_error(y_test,prediction)
