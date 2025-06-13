@@ -5,13 +5,14 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error,mean_squared_error
+import math
 
 df=pd.read_csv("student-mat.csv")
 dfmain=df.drop(["school","age","sex","address","famsize","Pstatus","Medu","Fedu","Mjob","Fjob","Fedu","reason","guardian","schoolsup","famsup","paid","activities","nursery","higher","famrel","freetime","goout","Dalc","Walc","health","absences","romantic","internet"],axis=1)
 print(dfmain.info())
 
 sns.pairplot(dfmain, kind="scatter",plot_kws={"alpha":0.5})
-plt.show()
+'''plt.show()'''
 #features  are traveltime,studeytime,failures,G1,G2
 #target variable is G3
 
@@ -26,4 +27,12 @@ lm=LinearRegression()
 lm.fit(X_train,y_train)
 
 prediction=lm.predict(X_test)
-print(prediction)
+'''print(prediction)'''
+
+er1=mean_absolute_error(y_test,prediction)
+er2=mean_squared_error(y_test,prediction)
+er3=math.sqrt(er2)
+
+print("Mean Absolute Error: ",er1)
+print("Mean Squared Error:",er2)
+print("Root Mean Squared Error: ",er3)
