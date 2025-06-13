@@ -5,7 +5,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
-from sklearn.metrics import mean_absolute_error,mean_squared_error
+from sklearn.metrics import mean_absolute_error,mean_squared_error,accuracy_score
 import math
 
 df=pd.read_csv("student-mat.csv")
@@ -55,13 +55,21 @@ rfc=RandomForestClassifier(n_estimators=100,random_state=42)
 rfc.fit(X_train,ygrade_train)
 prediction2=rfc.predict(X_test)
 
-'''print(prediction)'''
-print(prediction2)
-'''#REGRESSION ERROR
+'''print(prediction)
+print(prediction2)'''
+
+#REGRESSION ERROR
+print("-----------------REGRESSION ERROR CHECK-----------------")
 er1=mean_absolute_error(ymark_test,prediction)
 er2=mean_squared_error(ymark_test,prediction)
 er3=math.sqrt(er2)
-
 print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
-print("Root Mean Squared Error: ",er3)'''
+print("Root Mean Squared Error: ",er3)
+
+#CLASSIFIER ERROR
+print("-----------------CLASSIFIER ERROR CHECK-----------------")
+er4=accuracy_score(ygrade_test,prediction2)
+print("Accuracy Score: ",er4)
+
+
