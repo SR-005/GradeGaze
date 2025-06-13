@@ -39,7 +39,7 @@ ymark=df["G3"]
 ygrade=df["grades"]
 
 
-X_train,X_test,ymark_train,ymark_test,ygrade_train,ygrade_test=train_test_split(X,ymark,test_size=0.2,random_state=42)
+X_train,X_test,ymark_train,ymark_test,ygrade_train,ygrade_test=train_test_split(X,ymark,ygrade,test_size=0.2,random_state=42)
 #LINEAR REGRESSION
 '''lm=LinearRegression()
 lm.fit(X_train,y_train)
@@ -56,11 +56,12 @@ rfc.fit(X_train,ygrade_train)
 prediction2=rfc.predict(X_test)
 
 '''print(prediction)'''
-#REGRESSION ERROR
+print(prediction2)
+'''#REGRESSION ERROR
 er1=mean_absolute_error(ymark_test,prediction)
 er2=mean_squared_error(ymark_test,prediction)
 er3=math.sqrt(er2)
 
 print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
-print("Root Mean Squared Error: ",er3)
+print("Root Mean Squared Error: ",er3)'''
