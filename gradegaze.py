@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error,mean_squared_error
 
 df=pd.read_csv("student-mat.csv")
 dfmain=df.drop(["school","age","sex","address","famsize","Pstatus","Medu","Fedu","Mjob","Fjob","Fedu","reason","guardian","schoolsup","famsup","paid","activities","nursery","higher","famrel","freetime","goout","Dalc","Walc","health","absences","romantic","internet"],axis=1)
@@ -15,5 +17,6 @@ plt.show()
 
 #MODEL TRAINING 
 #data setup
-features=["traveltime","studytime","failures","G1","G2"]
-target="G3"
+
+X=df[["traveltime","studytime","failures","G1","G2"]]
+y=df["G3"]
