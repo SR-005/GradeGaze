@@ -30,13 +30,13 @@ def markgrades(mark):
     else:
         return "F"
     
-df["grades"]=df["G3"].apply(markgrades)
-print(df.head(10))
+dfmain["grades"]=dfmain["G3"].apply(markgrades)
+
 #MODEL TRAINING 
 #data setup
-X=df[["traveltime","studytime","failures","G1","G2"]]
-ymark=df["G3"]
-ygrade=df["grades"]
+X=dfmain[["traveltime","studytime","failures","G1","G2"]]
+ymark=dfmain["G3"]
+ygrade=dfmain["grades"]
 
 
 X_train,X_test,ymark_train,ymark_test,ygrade_train,ygrade_test=train_test_split(X,ymark,ygrade,test_size=0.2,random_state=42)
@@ -58,7 +58,7 @@ prediction2=rfc.predict(X_test)
 '''print(prediction)
 print(prediction2)'''
 
-#REGRESSION ERROR
+'''#REGRESSION ERROR
 print("-----------------REGRESSION ERROR CHECK-----------------")
 er1=mean_absolute_error(ymark_test,prediction)
 er2=mean_squared_error(ymark_test,prediction)
@@ -70,6 +70,15 @@ print("Root Mean Squared Error: ",er3)
 #CLASSIFIER ERROR
 print("-----------------CLASSIFIER ERROR CHECK-----------------")
 er4=accuracy_score(ygrade_test,prediction2)
-print("Accuracy Score: ",er4)
+print("Accuracy Score: ",er4)'''
 
 
+#USER INPUT PREDICTIONS: 
+travelt=int(input("Enter the Travel Time: "))
+studyt=int(input("Enter the Study Time: "))
+failure=int(input("Enter the Number of Failures: "))
+G1=int(input("Enter the Mark of First Internal Exam: "))
+G2=int(input("Enter the Mark of Second Internal Exam: "))
+
+inputdf=pd.DataFrame[{"traveltime": [travelt],"studytime": [studyt],"failure": [failure],"G1": [G1],"G2": [G2]}]
+print(inputdf.head())
