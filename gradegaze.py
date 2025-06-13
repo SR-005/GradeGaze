@@ -36,10 +36,9 @@ dfmain["grades"]=dfmain["G3"].apply(markgrades)
 #data setup
 X=dfmain[["traveltime","studytime","failures","G1","G2"]]
 ymark=dfmain["G3"]
-ygrade=dfmain["grades"]
 
 
-X_train,X_test,ymark_train,ymark_test,ygrade_train,ygrade_test=train_test_split(X,ymark,ygrade,test_size=0.2,random_state=42)
+X_train,X_test,ymark_train,ymark_test=train_test_split(X,ymark,test_size=0.2,random_state=42)
 #LINEAR REGRESSION
 '''lm=LinearRegression()
 lm.fit(X_train,y_train)
@@ -50,13 +49,7 @@ rfr=RandomForestRegressor(n_estimators=100,random_state=42)
 rfr.fit(X_train,ymark_train)
 prediction=rfr.predict(X_test)
 
-#RandomForest Classifier
-rfc=RandomForestClassifier(n_estimators=100,random_state=42)
-rfc.fit(X_train,ygrade_train)
-prediction2=rfc.predict(X_test)
-
-'''print(prediction)
-print(prediction2)'''
+'''print(prediction)'''
 
 '''#REGRESSION ERROR
 print("-----------------REGRESSION ERROR CHECK-----------------")
@@ -66,12 +59,7 @@ er3=math.sqrt(er2)
 print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
 print("Root Mean Squared Error: ",er3)
-
-#CLASSIFIER ERROR
-print("-----------------CLASSIFIER ERROR CHECK-----------------")
-er4=accuracy_score(ygrade_test,prediction2)
-print("Accuracy Score: ",er4)'''
-
+'''
 
 #USER INPUT PREDICTIONS: 
 travelt=int(input("Enter the Travel Time: "))
@@ -80,5 +68,21 @@ failure=int(input("Enter the Number of Failures: "))
 G1=int(input("Enter the Mark of First Internal Exam: "))
 G2=int(input("Enter the Mark of Second Internal Exam: "))
 
-inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failure": [failure],"G1": [G1],"G2": [G2]})
-print(inputdf.head())
+inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
+
+prediction=rfr.predict(inputdf)[0]
+
+def markgrades(mark):
+    if mark>=16:
+        return "A"
+    elif mark>=14:
+        return "B"
+    elif mark>=12:
+        return "C"
+    elif mark>=10:
+        return "D"
+    else:
+        return "F"
+predictiongrade=markgrades(prediction)
+print("Predicted Score: ",prediction)
+print("Predicted Grade: ",predictiongrade)
