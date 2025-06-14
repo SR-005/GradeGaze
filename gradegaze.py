@@ -52,7 +52,7 @@ rfr.fit(X_train,ymark_train)
 prediction=rfr.predict(X_test)'''
 
 #XGBoost Model
-xgb=XGBRegressor(n_estimators=200,max_depth=4,learning_rate=0.1)
+xgb=XGBRegressor(n_estimators=400,max_depth=7,learning_rate=0.01,random_state=42)
 xgb.fit(X_train,ymark_train)
 prediction=xgb.predict(X_test)
 
@@ -68,7 +68,7 @@ print("Mean Squared Error:",er2)
 print("Root Mean Squared Error: ",er3)
 
 
-'''#USER INPUT PREDICTIONS: 
+#USER INPUT PREDICTIONS: 
 travelt=int(input("Enter the Travel Time: "))
 studyt=int(input("Enter the Study Time: "))
 failure=int(input("Enter the Number of Failures: "))
@@ -90,6 +90,8 @@ def markgrades(mark):
         return "D"
     else:
         return "F"
-predictiongrade=markgrades(prediction)
+roundprediction=round(prediction)
+predictiongrade=markgrades(roundprediction)
 print("Predicted Score: ",prediction)
-print("Predicted Grade: ",predictiongrade)'''
+print("Rounded Predicted Score: ",roundprediction)
+print("Predicted Grade: ",predictiongrade)
