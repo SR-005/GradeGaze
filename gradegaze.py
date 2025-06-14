@@ -46,13 +46,13 @@ X_train,X_test,ymark_train,ymark_test=train_test_split(X,ymark,test_size=0.2,ran
 lm.fit(X_train,y_train)
 prediction=lm.predict(X_test)'''
 
-#RandomForest Regression
-'''rfr=RandomForestRegressor(n_estimators=100,random_state=42)
+'''#RandomForest Regression
+rfr=RandomForestRegressor(n_estimators=100,random_state=42)
 rfr.fit(X_train,ymark_train)
 prediction=rfr.predict(X_test)'''
 
 #XGBoost Model
-xgb=XGBRegressor()
+xgb=XGBRegressor(n_estimators=200,max_depth=4,learning_rate=0.1)
 xgb.fit(X_train,ymark_train)
 prediction=xgb.predict(X_test)
 
