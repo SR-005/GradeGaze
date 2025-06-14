@@ -52,11 +52,13 @@ rfr.fit(X_train,ymark_train)
 prediction=rfr.predict(X_test)'''
 
 #XGBoost Model
-xgb
+xgb=XGBRegressor()
+xgb.fit(X_train,ymark_train)
+prediction=xgb.predict(X_test)
 
 '''print(prediction)'''
 
-'''#REGRESSION ERROR
+#REGRESSION ERROR
 print("-----------------REGRESSION ERROR CHECK-----------------")
 er1=mean_absolute_error(ymark_test,prediction)
 er2=mean_squared_error(ymark_test,prediction)
@@ -64,9 +66,9 @@ er3=math.sqrt(er2)
 print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
 print("Root Mean Squared Error: ",er3)
-'''
 
-#USER INPUT PREDICTIONS: 
+
+'''#USER INPUT PREDICTIONS: 
 travelt=int(input("Enter the Travel Time: "))
 studyt=int(input("Enter the Study Time: "))
 failure=int(input("Enter the Number of Failures: "))
@@ -75,7 +77,7 @@ G2=int(input("Enter the Mark of Second Internal Exam: "))
 
 inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
 
-prediction=rfr.predict(inputdf)[0]
+prediction=xgb.predict(inputdf)[0]
 
 def markgrades(mark):
     if mark>=16:
@@ -90,4 +92,4 @@ def markgrades(mark):
         return "F"
 predictiongrade=markgrades(prediction)
 print("Predicted Score: ",prediction)
-print("Predicted Grade: ",predictiongrade)
+print("Predicted Grade: ",predictiongrade)'''
