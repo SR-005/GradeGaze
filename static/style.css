@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "StretchPro";
+    src: url("fonts/StretchPro.otf");
+}
+
+.main_heading{
+    text-align: center;
+}
