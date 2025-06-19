@@ -1,8 +1,15 @@
 @font-face {
     font-family: "StretchPro";
-    src: url("fonts/StretchPro.otf");
+    src: url("fonts/StretchPro.otf") format("OpenType");
 }
 
 .main_heading{
     text-align: center;
+    font-family: "StretchPro",sans-serif;
+    font-size: 75px;
+    padding-top: 8px;
+    color: transparent;
+    background-image: linear-gradient(to right,black 50%,white 50%);
+    background-size: 200% 100%;
 }
+
