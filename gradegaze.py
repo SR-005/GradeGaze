@@ -52,7 +52,10 @@ rfr.fit(X_train,ymark_train)
 prediction=rfr.predict(X_test)'''
 
 #XGBoost Model
+#we use this model for improved accuracy and better tuning:
 xgb=XGBRegressor(n_estimators=400,max_depth=7,learning_rate=0.01,random_state=42)
+#n_estimators refers to number of trees used for learnig
+#max depth refers to how in depth it will learn
 xgb.fit(X_train,ymark_train)
 prediction=xgb.predict(X_test)
 
@@ -75,8 +78,7 @@ failure=int(input("Enter the Number of Failures: "))
 G1=int(input("Enter the Mark of First Internal Exam: "))
 G2=int(input("Enter the Mark of Second Internal Exam: "))
 
-inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
-
+inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})``
 prediction=xgb.predict(inputdf)[0]
 
 def markgrades(mark):
@@ -90,6 +92,8 @@ def markgrades(mark):
         return "D"
     else:
         return "F"
+    
+#Rounding off marks for better viewer accuracy
 roundprediction=round(prediction)
 predictiongrade=markgrades(roundprediction)
 print("Predicted Score: ",prediction)
