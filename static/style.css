@@ -3,13 +3,31 @@
     src: url("fonts/StretchPro.otf") format("OpenType");
 }
 
+.body{
+    color: beige;
+}
+
 .main_heading{
     text-align: center;
     font-family: "StretchPro",sans-serif;
     font-size: 75px;
+    margin-bottom: 0px;
     padding-top: 8px;
     color: transparent;
-    background-image: linear-gradient(to right,black 50%,white 50%);
+    background-image: linear-gradient(to right,black 0%,rgb(24, 112, 175) 50%,rgb(24, 112, 175) 100%);
     background-size: 200% 100%;
+    background-position: left bottom;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-position 1s ease;
+}
+.main_heading:hover {
+    background-position: right bottom;
 }
 
+.sub_heading{
+    text-align: center;
+    font-family: "StretchPro",sans-serif;
+    margin-top: 0px;
+    font-size: 16px;
+}
