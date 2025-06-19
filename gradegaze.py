@@ -78,7 +78,7 @@ failure=int(input("Enter the Number of Failures: "))
 G1=int(input("Enter the Mark of First Internal Exam: "))
 G2=int(input("Enter the Mark of Second Internal Exam: "))
 
-inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})``
+inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
 prediction=xgb.predict(inputdf)[0]
 
 def markgrades(mark):
