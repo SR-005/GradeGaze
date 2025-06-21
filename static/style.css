@@ -49,8 +49,11 @@
     flex: 1;
     text-align: center;
     padding-right: 0px;
-    font-size: 20px;
-    margin-left: 50px
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 /* Forum2-TRAVEL TIME */
 .formrow2{
@@ -65,8 +68,10 @@
     flex: 1;
     text-align: center;
     padding-right: 0px;
-    font-size: 20px;
-    margin-left: 10px
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* Forum3-STUDY TIME */
 .formrow3{
@@ -81,8 +86,10 @@
     flex: 1;
     text-align: center;
     padding-right: 0px;
-    font-size: 20px;
-    margin-left: 10px
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* Forum4-FAILURES */
 .formrow4{
@@ -97,8 +104,10 @@
     flex: 1;
     text-align: center;
     padding-right: 0px;
-    font-size: 20px;
-    margin-left: 45px
+    margin-left: 45px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* Forum5-FIRST MARK */
 .formrow5{
@@ -114,8 +123,10 @@
     flex: 1;
     text-align: left;
     padding-right: 10px;
-    font-size: 20px;
     white-space: nowrap;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* Forum6-SECOND MARK */
 .formrow6{
@@ -131,6 +142,8 @@
     flex: 0;
     text-align: left;
     padding-right: 10px;
-    font-size: 20px;
     white-space: nowrap;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
