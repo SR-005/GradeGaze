@@ -126,6 +126,7 @@
     white-space: nowrap;
     font-size: 22px;
     font-weight: normal;
+    margin-left: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* Forum6-SECOND MARK */
@@ -145,5 +146,11 @@
     white-space: nowrap;
     font-size: 22px;
     font-weight: normal;
+    margin-left: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.instruction{
+    text-align: center;
 }
