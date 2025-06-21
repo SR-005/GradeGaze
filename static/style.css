@@ -31,17 +31,21 @@
     font-size: 16px;
 }
 
-.form-control{
-    width: 500px;
-    margin-left: 200px;
-    margin-top: 0px;
-}
 .formrow{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    width: 500px;
+    margin: 20px auto; 
+    margin-top: 100px;
 }
-.formlabel1{
-    width: 100px;
-    margin-top: 200px;
+.formlabel1 {
+    flex: 1;
+    text-align: center;
+    padding-right: 0px;
+    font-size: 20px;
+}
+.form-control {
+    flex: 2;
+    width: 100%;
 }
