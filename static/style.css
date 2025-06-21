@@ -31,7 +31,13 @@
     font-size: 16px;
 }
 
-.formrow{
+
+
+.form-control {
+    width: 350px;
+}
+/* Forum1-STUDENT NAME */
+.formrow1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,8 +50,87 @@
     text-align: center;
     padding-right: 0px;
     font-size: 20px;
+    margin-left: 50px
 }
-.form-control {
-    flex: 2;
-    width: 100%;
+/* Forum2-TRAVEL TIME */
+.formrow2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin: 20px auto; 
+    margin-top: 10px;
+}
+.formlabel2 {
+    flex: 1;
+    text-align: center;
+    padding-right: 0px;
+    font-size: 20px;
+    margin-left: 10px
+}
+/* Forum3-STUDY TIME */
+.formrow3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin: 20px auto; 
+    margin-top: 10px;
+}
+.formlabel3 {
+    flex: 1;
+    text-align: center;
+    padding-right: 0px;
+    font-size: 20px;
+    margin-left: 10px
+}
+/* Forum4-FAILURES */
+.formrow4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin: 20px auto; 
+    margin-top: 10px;
+}
+.formlabel4 {
+    flex: 1;
+    text-align: center;
+    padding-right: 0px;
+    font-size: 20px;
+    margin-left: 45px
+}
+/* Forum5-FIRST MARK */
+.formrow5{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 520px;
+    /* margin: 20px auto;  */
+    margin-top: 10px;
+    margin-left: 478px;
+}
+.formlabel5 {
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+/* Forum6-SECOND MARK */
+.formrow6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+    margin: 20px auto;  
+    margin-top: 10px;
+    margin-left: 448px;
+}
+.formlabel6 {
+    flex: 0;
+    text-align: left;
+    padding-right: 10px;
+    font-size: 20px;
+    white-space: nowrap;
 }
