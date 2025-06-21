@@ -3,7 +3,12 @@ from flask import Flask, request, render_template
 app=Flask(__name__)
 @app.route("/")
 def index():
-    name,travel,study,failure,first,second=None
+    name=None
+    travel=None
+    study=None
+    failure=None
+    first=None
+    second=None
     if request.method=="POST":
         name=request.form.get["name"]
         travel=request.form.get["traveltime"]
