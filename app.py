@@ -5,23 +5,19 @@ app=Flask(__name__)
 @app.route("/",methods=["GET", "POST"])
 def index():
     name=None
-    travel=None
-    study=None
-    failure=None
-    first=None
-    second=None
+    global data
+    data=None
     mark=None
     grade=None
     if request.method=="POST":
         name=request.form.get("name")
-        travel=request.form.get("traveltime")
-        study=request.form.get("studytime")
-        failure=request.form.get("failure")
-        first=request.form.get("firstmark")
-        second=request.form.get("secondmark")
-    data={int(travel),int(study),int(failure),int(first),int(second)}
-    print(name," ",travel," ",study," ",failure," ",first," ",second," ")
-    mark,grade=markp(travel,study,failure,first,second)
+        data={"traveltime":int(request.form.get("traveltime")),
+          "studytime":int(request.form.get("studytime")),
+          "failures":int(request.form.get("failures")),
+          "G1":int(request.form.get("firstmark")),
+          "G2":int(request.form.get("secondmark"))}
+    print(data)
+    mark,grade=markp(data)
     print(mark,"    ",grade)
     return render_template("index.html")
 
