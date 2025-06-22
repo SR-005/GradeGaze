@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error,mean_squared_error,accuracy_score
 import math
+import joblib
 
 
 df=pd.read_csv("student-mat.csv")
@@ -70,13 +71,13 @@ print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
 print("Root Mean Squared Error: ",er3)
 
-
+joblib.dump(xgb, "xgb.pkl")
 #USER INPUT PREDICTIONS: 
-travelt=int(input("Enter the Travel Time: "))
+'''travelt=int(input("Enter the Travel Time: "))
 studyt=int(input("Enter the Study Time: "))
 failure=int(input("Enter the Number of Failures: "))
 G1=int(input("Enter the Mark of First Internal Exam: "))
-G2=int(input("Enter the Mark of Second Internal Exam: "))
+G2=int(input("Enter the Mark of Second Internal Exam: "))'''
 
 def markprediction(travelt,studyt,failure,G1,G2):
     inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
