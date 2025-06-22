@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 
 app=Flask(__name__)
-@app.route("/")
+@app.route("/",methods=["GET", "POST"])
 def index():
     name=None
     travel=None
@@ -10,12 +10,12 @@ def index():
     first=None
     second=None
     if request.method=="POST":
-        name=request.form.get["name"]
-        travel=request.form.get["traveltime"]
-        study=request.form.get["studytime"]
-        failure=request.form.get["failure"]
-        first=request.form.get["firstmark"]
-        second=request.form.get["secondmark"]
+        name=request.form.get("name")
+        travel=request.form.get("traveltime")
+        study=request.form.get("studytime")
+        failure=request.form.get("failure")
+        first=request.form.get("firstmark")
+        second=request.form.get("secondmark")
     print(name," ",travel," ",study," ",failure," ",first," ",second," ")
     return render_template("index.html",name=name,travel=travel,study=study,failure=failure,first=first,second=second)
 

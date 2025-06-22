@@ -11,32 +11,32 @@
     <h1 class="main_heading">GradeGaze</h1>
     <h4 class="sub_heading">know your marks before you know</h4>
     <h4 class="instruction">Provide Details of the Student</h4>
-    <form action="/" method="POST" class ="form">
+    <form action="/" method="POST">
         <div class="formrow1">
             <label for="name" class="formlabel1">Name</label>
-            <input class="form-control" id="name" placeholder="Enter Student Name">
+            <input class="form-control" id="name" name="name" placeholder="Enter Student Name">
         </div>
         <div class="formrow2">
             <label for="traveltime" class="formlabel2">Travel Time</label>
-            <input class="form-control" id="traveltime" placeholder="Enter Student's Travel Time">
+            <input class="form-control" id="traveltime" name="traveltime" placeholder="Enter Student's Travel Time"/>
         </div>
         <div class="formrow3">
             <label for="studytime" class="formlabel3">Study Time</label>
-            <input class="form-control" id="studytime" placeholder="Enter Student's Study Time">
+            <input class="form-control" id="studytime" name="studytime" placeholder="Enter Student's Study Time"/>
         </div>
         <div class="formrow4">
             <label for="failures" class="formlabel4">Failures</label>
-            <input class="form-control" id="failures" placeholder="Enter Student's Total Failures">
+            <input class="form-control" id="failures" name="failures" placeholder="Enter Student's Total Failures"/>
         </div>
         <div class="formrow5">
             <label for="firstmark" class="formlabel5">First Internal Mark</label>
-            <input class="form-control" id="firstmark" placeholder="Enter the First Internal Mark">
+            <input class="form-control" id="firstmark" name="firstmark" placeholder="Enter the First Internal Mark"/>
         </div>
         <div class="formrow6">
             <label for="secondmark" class="formlabel6">Second Internal Mark</label>
-            <input class="form-control" id="secondmark" placeholder="Enter the Second Internal Mark">
+            <input class="form-control" id="secondmark" name="secondmark" placeholder="Enter the Second Internal Mark"/>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     
