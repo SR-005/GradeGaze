@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
-from gradegaze import markprediction as markp
+import joblib
+import pandas as pd
 
 app=Flask(__name__)
 @app.route("/",methods=["GET", "POST"])
 def index():
     name=None
-    global data
     data=None
     mark=None
     grade=None
@@ -16,9 +16,30 @@ def index():
           "failures":int(request.form.get("failures")),
           "G1":int(request.form.get("firstmark")),
           "G2":int(request.form.get("secondmark"))}
-    print(data)
-    mark,grade=markp(data)
-    print(mark,"    ",grade)
+        print(data)
+
+        #machine learning prediction
+        xgb=joblib.load("xgb.pkl")  #loading the model
+        inputdf=pd.DataFrame([data])
+        prediction=xgb.predict(inputdf)[0]
+
+        def markgrades(mark):
+            if mark>=16:
+                return "A"
+            elif mark>=14:
+                return "B"
+            elif mark>=12:
+                return "C"
+            elif mark>=10:
+                return "D"
+            else:
+                return "F"
+            
+        #Rounding off marks for better viewer accuracy
+        mark=round(prediction)
+        grade=markgrades(mark)
+        #mark,grade=markp(data)
+        print(mark,"    ",grade)
     return render_template("index.html")
 
 if __name__=="__main__":
