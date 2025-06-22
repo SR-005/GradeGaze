@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from gradegaze import markprediction as markp
 
 app=Flask(__name__)
 @app.route("/",methods=["GET", "POST"])
@@ -9,6 +10,8 @@ def index():
     failure=None
     first=None
     second=None
+    mark=None
+    grade=None
     if request.method=="POST":
         name=request.form.get("name")
         travel=request.form.get("traveltime")
@@ -17,7 +20,9 @@ def index():
         first=request.form.get("firstmark")
         second=request.form.get("secondmark")
     print(name," ",travel," ",study," ",failure," ",first," ",second," ")
-    return render_template("index.html",name=name,travel=travel,study=study,failure=failure,first=first,second=second)
+    mark,grade=markp(travel,study,failure,first,second)
+    print(mark,"    ",grade)
+    return render_template("index.html")
 
 if __name__=="__main__":
     app.run(debug=True)

@@ -29,11 +29,13 @@
     font-family: "StretchPro",sans-serif;
     margin-top: 0px;
     font-size: 16px;
+    text-decoration: underline;
 }
 .instruction{
     font-size: 26px;
     text-align: center;
     margin-top: 70px;
+    text-decoration: underline;
 }
 
 

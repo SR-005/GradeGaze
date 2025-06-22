@@ -78,24 +78,26 @@ failure=int(input("Enter the Number of Failures: "))
 G1=int(input("Enter the Mark of First Internal Exam: "))
 G2=int(input("Enter the Mark of Second Internal Exam: "))
 
-inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
-prediction=xgb.predict(inputdf)[0]
+def markprediction(travelt,studyt,failure,G1,G2):
+    inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
+    prediction=xgb.predict(inputdf)[0]
 
-def markgrades(mark):
-    if mark>=16:
-        return "A"
-    elif mark>=14:
-        return "B"
-    elif mark>=12:
-        return "C"
-    elif mark>=10:
-        return "D"
-    else:
-        return "F"
-    
-#Rounding off marks for better viewer accuracy
-roundprediction=round(prediction)
-predictiongrade=markgrades(roundprediction)
-print("Predicted Score: ",prediction)
-print("Rounded Predicted Score: ",roundprediction)
-print("Predicted Grade: ",predictiongrade)
+    def markgrades(mark):
+        if mark>=16:
+            return "A"
+        elif mark>=14:
+            return "B"
+        elif mark>=12:
+            return "C"
+        elif mark>=10:
+            return "D"
+        else:
+            return "F"
+        
+    #Rounding off marks for better viewer accuracy
+    roundprediction=round(prediction)
+    predictiongrade=markgrades(roundprediction)
+    print("Predicted Score: ",prediction)
+    print("Rounded Predicted Score: ",roundprediction)
+    print("Predicted Grade: ",predictiongrade)
+    return roundprediction,predictiongrade
