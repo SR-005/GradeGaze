@@ -71,7 +71,10 @@ print("Mean Absolute Error: ",er1)
 print("Mean Squared Error:",er2)
 print("Root Mean Squared Error: ",er3)
 
+#saved model
 joblib.dump(xgb, "xgb.pkl")
+
+
 #USER INPUT PREDICTIONS: 
 '''travelt=int(input("Enter the Travel Time: "))
 studyt=int(input("Enter the Study Time: "))
@@ -80,6 +83,7 @@ G1=int(input("Enter the Mark of First Internal Exam: "))
 G2=int(input("Enter the Mark of Second Internal Exam: "))'''
 
 def markprediction(travelt,studyt,failure,G1,G2):
+    xgb=joblib.load("xgb.pkl")
     inputdf=pd.DataFrame({"traveltime": [travelt],"studytime": [studyt],"failures": [failure],"G1": [G1],"G2": [G2]})
     prediction=xgb.predict(inputdf)[0]
 

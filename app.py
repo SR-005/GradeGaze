@@ -19,6 +19,7 @@ def index():
         failure=request.form.get("failure")
         first=request.form.get("firstmark")
         second=request.form.get("secondmark")
+    data={int(travel),int(study),int(failure),int(first),int(second)}
     print(name," ",travel," ",study," ",failure," ",first," ",second," ")
     mark,grade=markp(travel,study,failure,first,second)
     print(mark,"    ",grade)
