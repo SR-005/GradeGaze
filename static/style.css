@@ -4,7 +4,7 @@
 }
 
 .body{
-    color: beige;
+    color: aquamarine;
 }
 
 .main_heading{
@@ -30,11 +30,17 @@
     margin-top: 0px;
     font-size: 16px;
 }
+.instruction{
+    font-size: 26px;
+    text-align: center;
+    margin-top: 70px;
+}
 
 
 
 .form-control {
     width: 350px;
+    margin-bottom: 0px;
 }
 /* Forum1-STUDENT NAME */
 .formrow1{
@@ -43,7 +49,7 @@
     align-items: center;
     width: 500px;
     margin: 20px auto; 
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .formlabel1 {
     flex: 1;
@@ -150,7 +156,3 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-
-.instruction{
-    text-align: center;
-}
