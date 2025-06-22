@@ -20,8 +20,8 @@ def index():
 
         #machine learning prediction
         xgb=joblib.load("xgb.pkl")  #loading the model
-        inputdf=pd.DataFrame([data])
-        prediction=xgb.predict(inputdf)[0]
+        inputdf=pd.DataFrame([data])   #setting data for pandas
+        prediction=xgb.predict(inputdf)[0]  
 
         def markgrades(mark):
             if mark>=16:
