@@ -41,14 +41,15 @@
         </div>
     </form>
     {% if name %}
-        <div class="resultcard">
-            <p>{{ name }}</p>
-            <p>{{ G1 }}</p>
-            <p>{{ G2 }}</p>
-            <p>{{ mark }}</p>
-            <p>{{ grade }}</p>
-        </div>
-    {% endif %}
+    <div class="result-card">
+        <h2>Result Card</h2>
+        <div class="result-item"><strong>Name:</strong> {{ name }}</div>
+        <div class="result-item"><strong>First Internal Mark:</strong> {{ G1 }}</div>
+        <div class="result-item"><strong>Second Internal Mark:</strong> {{ G2 }}</div>
+        <div class="result-item"><strong>Predicted Mark:</strong> {{ mark }}</div>
+        <div class="result-item"><strong>Predicted Grade:</strong> {{ grade }}</div>
+    </div>
+{% endif %}
     
 </body>
 </html>
