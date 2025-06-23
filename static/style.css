@@ -3,8 +3,11 @@
     src: url("fonts/StretchPro.otf") format("OpenType");
 }
 
-.body{
-    color: aquamarine;
+body {
+    background: linear-gradient(to right, #dbe9f4, #f0f4f8);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .main_heading{
@@ -172,31 +175,51 @@
 
 .result-card {
     width: 400px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 50px auto;
+    padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    background: #f9f9f9;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: left;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    border-left: 8px solid #4a90e2;
 }
 
 .result-card:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px);
 }
 
 .result-card h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 24px;
-    border-bottom: 2px solid #ccc;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-size: 26px;
+    border-bottom: 2px solid #d9e2ec;
     padding-bottom: 10px;
 }
 
 .result-item {
     font-size: 18px;
-    margin: 10px 0;
-    color: #444;
+    margin: 12px 0;
+    color: #333;
+}
+
+/* Optional: Grade-based color (if grade is a letter) */
+.grade-A {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.grade-B {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.grade-C {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.grade-F {
+    color: #e74c3c;
+    font-weight: bold;
 }
