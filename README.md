@@ -1,22 +1,28 @@
 # GradeGaze
 
-GradeGaze is a simple web application that predicts a student's final mark and grade based on their internal assessment scores. It uses machine learning models and provides a clean user interface for input and result display.
+**GradeGaze** is a simple web application that uses a machine learning regression model to predict a student's final marks and academic grade based on internal assessments. It provides a clean, user-friendly interface where users can input student details and receive immediate predictions.
 
 ## Features
 
-- Input form for student name and internal marks (G1, G2)
-- Predicts final marks using a regression model
-- Predicts final grade using a classification model
-- Displays result in a styled result card
-- Built using Flask, HTML, and CSS
+- Input form for student name and internal marks (G1 and G2)
+- Predicts final mark using a trained regression model
+- Converts the predicted mark into a letter grade using defined rules
+- Displays results in a clean, styled result card
+- Built using Python, Flask, and basic front-end tools (HTML & CSS)
+
+## Machine Learning Overview
+
+At the core of GradeGaze is a machine learning regression model trained on historical academic data. The model learns patterns between internal assessment scores and final marks, enabling it to make informed predictions. Letter grades are derived from the predicted mark using simple grade boundaries (not a classifier).
+
+This approach makes the app lightweight, fast, and easy to interpret.
 
 ## Technologies Used
 
 - Python
 - Flask
-- HTML & CSS
-- Scikit-learn
+- Scikit-learn (for regression model)
 - Pandas
+- HTML & CSS
 
 ## Installation
 
