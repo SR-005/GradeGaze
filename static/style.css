@@ -102,7 +102,7 @@ body {
     font-weight: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-/* Forum4-FAILURES */
+/* Forum4-FAILURE */
 .formrow4{
     display: flex;
     justify-content: space-between;
@@ -125,7 +125,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 548px;
+    width: 554px;
     margin: 20px auto;
     margin-top: 10px;
     margin-left: 443px;
@@ -145,7 +145,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 574px;
+    width: 580px;
     margin: 20px auto;  
     margin-top: 10px;
     margin-left: 418px;
