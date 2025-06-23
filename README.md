@@ -12,7 +12,7 @@
 
 ## Machine Learning Overview
 
-At the core of GradeGaze is a machine learning regression model trained on historical academic data. The model learns patterns between internal assessment scores and final marks, enabling it to make informed predictions. Letter grades are derived from the predicted mark using simple grade boundaries (not a classifier).
+At the core of GradeGaze is a machine learning regression model trained on historical academic data. The model learns patterns between internal assessment scores and final marks, enabling it to make informed predictions. Letter grades are derived from the predicted mark using simple grade boundaries.
 
 This approach makes the app lightweight, fast, and easy to interpret.
 
