@@ -40,14 +40,15 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-
-    <div class="resultcard">
-        <p>{{ name }}</p>
-        <p>{{ G1 }}</p>
-        <p>{{ G2 }}</p>
-        <p>{{ mark }}</p>
-        <p>{{ grade }}</p>
-    </div>
+    {% if name %}
+        <div class="resultcard">
+            <p>{{ name }}</p>
+            <p>{{ G1 }}</p>
+            <p>{{ G2 }}</p>
+            <p>{{ mark }}</p>
+            <p>{{ grade }}</p>
+        </div>
+    {% endif %}
     
 </body>
 </html>
