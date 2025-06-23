@@ -166,3 +166,10 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
+
+.resultcard{
+    border-radius: 20%;
+    background-color: aquamarine;
+}
