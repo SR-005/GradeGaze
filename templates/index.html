@@ -50,10 +50,17 @@
         <div class="result-item"><strong>Predicted Grade:</strong> {{ grade }}</div>
     </div>
 {% endif %}
-    <h2>📘 Study Time vs Marks</h2>
-    <img src="{{ url_for('static', filename='studytime_bar.png') }}" width="600">
+    <h2 style="text-align:center;">📊 Visual Insights</h2>
 
-    <h2>🚌 Travel Time vs Marks</h2>
-    <img src="{{ url_for('static', filename='traveltime_bar.png') }}" width="600">
+<div class="chart-grid">
+  <div class="chart-card">
+    <img src="{{ url_for('static', filename='studytime_bar.png') }}" alt="Study Time vs Marks">
+    <p>📘 Study Time vs Marks</p>
+  </div>
+  <div class="chart-card">
+    <img src="{{ url_for('static', filename='traveltime_bar.png') }}" alt="Travel Time vs Marks">
+    <p>🚌 Travel Time vs Marks</p>
+  </div>
+</div>
 </body>
 </html>

@@ -223,3 +223,30 @@ body {
     color: #e74c3c;
     font-weight: bold;
 }
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.chart-card {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: scale(1.02);
+}
+
+.chart-card img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
