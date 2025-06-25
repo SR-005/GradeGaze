@@ -76,24 +76,27 @@ joblib.dump(xgb, "xgb.pkl")
 
 #PLOTTING GRAPHS FOR WEB APP:
 sns.set(style="whitegrid")
-# ---- Chart 1: Study Time vs Final Marks ----
-plt.figure(figsize=(6, 4))
-sns.boxplot(x='studytime', y='G3', data=df, palette='Blues')
-plt.title("Study Time vs Final Marks")
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Study Time Bar Chart
+plt.figure(figsize=(6,4))
+sns.barplot(x='studytime', y='G3', data=df, ci=None, palette='Blues')
+plt.title("Average Marks by Study Time")
 plt.xlabel("Study Time (1=low, 4=high)")
-plt.ylabel("Final Grade (G3)")
+plt.ylabel("Average Final Marks")
 plt.tight_layout()
-plt.savefig("static/studytime_vs_g3.png")
+plt.savefig("static/studytime_bar.png")
 plt.close()
 
-# ---- Chart 2: Travel Time vs Final Marks ----
-plt.figure(figsize=(6, 4))
-sns.boxplot(x='traveltime', y='G3', data=df, palette='Purples')
-plt.title("Travel Time vs Final Marks")
+# Travel Time Bar Chart
+plt.figure(figsize=(6,4))
+sns.barplot(x='traveltime', y='G3', data=df, ci=None, palette='Purples')
+plt.title("Average Marks by Travel Time")
 plt.xlabel("Travel Time (1=short, 4=long)")
-plt.ylabel("Final Grade (G3)")
+plt.ylabel("Average Final Marks")
 plt.tight_layout()
-plt.savefig("static/traveltime_vs_g3.png")
+plt.savefig("static/traveltime_bar.png")
 plt.close()
 
 
