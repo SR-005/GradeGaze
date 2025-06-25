@@ -99,6 +99,18 @@ plt.tight_layout()
 plt.savefig("static/traveltime_bar.png")
 plt.close()
 
+#Prediction VS Final Mark Graph
+plt.figure(figsize=(6,6))
+plt.scatter(ymark_test, prediction, alpha=0.6, color='green', edgecolors='k')
+plt.plot([0, 20], [0, 20], 'r--', label='Perfect Prediction')
+plt.xlabel("Actual Marks")
+plt.ylabel("Predicted Marks")
+plt.title("Actual vs Predicted Final Marks")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("static/actual_vs_predicted.png")
+plt.close()
 
 
 #USER INPUT PREDICTIONS: 
