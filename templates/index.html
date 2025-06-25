@@ -49,19 +49,25 @@
         <div class="result-item"><strong>Predicted Mark:</strong> {{ mark }}</div>
         <div class="result-item"><strong>Predicted Grade:</strong> {{ grade }}</div>
     </div>
-{% endif %}
+    {% endif %}
 
-<h2 style="text-align:center;">📊 Visual Insights</h2>
+    <h2 style="text-align:center;">📊 Visual Insights</h2>
+    <div class="chart-row">
+    <div class="chart-box">
+        <img src="{{ url_for('static', filename='studytime_bar.png') }}" alt="Study Time vs Marks">
+        <p>📘 Study Time vs Marks</p>
+    </div>
+    <div class="chart-box">
+        <img src="{{ url_for('static', filename='traveltime_bar.png') }}" alt="Travel Time vs Marks">
+        <p>🚌 Travel Time vs Marks</p>
+    </div>
+    </div>
 
-<div class="chart-row">
-  <div class="chart-box">
-    <img src="{{ url_for('static', filename='studytime_bar.png') }}" alt="Study Time vs Marks">
-    <p>📘 Study Time vs Marks</p>
-  </div>
-  <div class="chart-box">
-    <img src="{{ url_for('static', filename='traveltime_bar.png') }}" alt="Travel Time vs Marks">
-    <p>🚌 Travel Time vs Marks</p>
-  </div>
-</div>
+    <div class="chart-row">
+    <div class="chart-box" style="width: 60%;">
+        <img src="{{ url_for('static', filename='actual_vs_predicted.png') }}" alt="Actual vs Predicted Marks">
+        <p>📈 Actual vs Predicted Final Marks</p>
+    </div>
+    </div>
 </body>
 </html>
