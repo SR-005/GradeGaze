@@ -74,6 +74,29 @@ print("Root Mean Squared Error: ",er3)
 #saved model
 joblib.dump(xgb, "xgb.pkl")
 
+#PLOTTING GRAPHS FOR WEB APP:
+sns.set(style="whitegrid")
+# ---- Chart 1: Study Time vs Final Marks ----
+plt.figure(figsize=(6, 4))
+sns.boxplot(x='studytime', y='G3', data=df, palette='Blues')
+plt.title("Study Time vs Final Marks")
+plt.xlabel("Study Time (1=low, 4=high)")
+plt.ylabel("Final Grade (G3)")
+plt.tight_layout()
+plt.savefig("static/studytime_vs_g3.png")
+plt.close()
+
+# ---- Chart 2: Travel Time vs Final Marks ----
+plt.figure(figsize=(6, 4))
+sns.boxplot(x='traveltime', y='G3', data=df, palette='Purples')
+plt.title("Travel Time vs Final Marks")
+plt.xlabel("Travel Time (1=short, 4=long)")
+plt.ylabel("Final Grade (G3)")
+plt.tight_layout()
+plt.savefig("static/traveltime_vs_g3.png")
+plt.close()
+
+
 
 #USER INPUT PREDICTIONS: 
 '''travelt=int(input("Enter the Travel Time: "))
