@@ -71,7 +71,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 800px;
     margin: 20px auto; 
     margin-top: 10px;
 }
@@ -79,7 +79,7 @@ body {
     flex: 1;
     text-align: center;
     padding-right: 0px;
-    margin-left: 10px;
+    margin-left: 150px;
     font-size: 22px;
     font-weight: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
