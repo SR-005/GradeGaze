@@ -112,35 +112,3 @@ plt.tight_layout()
 plt.savefig("static/actual_vs_predicted.png")
 plt.close()
 
-
-#USER INPUT PREDICTIONS: 
-'''travelt=int(input("Enter the Travel Time: "))
-studyt=int(input("Enter the Study Time: "))
-failure=int(input("Enter the Number of Failures: "))
-G1=int(input("Enter the Mark of First Internal Exam: "))
-G2=int(input("Enter the Mark of Second Internal Exam: "))'''
-
-def markprediction(data):
-    xgb=joblib.load("xgb.pkl")
-    inputdf=pd.DataFrame([data])
-    prediction=xgb.predict(inputdf)[0]
-
-    def markgrades(mark):
-        if mark>=16:
-            return "A"
-        elif mark>=14:
-            return "B"
-        elif mark>=12:
-            return "C"
-        elif mark>=10:
-            return "D"
-        else:
-            return "F"
-        
-    #Rounding off marks for better viewer accuracy
-    roundprediction=round(prediction)
-    predictiongrade=markgrades(roundprediction)
-    print("Predicted Score: ",prediction)
-    print("Rounded Predicted Score: ",roundprediction)
-    print("Predicted Grade: ",predictiongrade)
-    return roundprediction,predictiongrade
