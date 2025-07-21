@@ -45,5 +45,9 @@ def index():
         print("Mark:",mark,"\nGrade:",grade)
     return render_template("index.html",mark=mark,grade=grade,name=name,G1=G1,G2=G2)
 
-if __name__=="__main__":
-    app.run(debug=True)
+#web deployment
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=10000)
+#local host
+'''if __name__=="__main__":
+    app.run(debug=True)'''
